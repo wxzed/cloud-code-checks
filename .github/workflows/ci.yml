@@ -259,4 +259,3 @@ jobs:
           echo "clang-tidy: ${{ needs['clang-tidy'].result }}"
           echo "release:    ${{ needs.release.result }}"
           echo "===================="
-
