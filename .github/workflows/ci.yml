@@ -29,10 +29,10 @@ jobs:
       - name: Check out code from GitHub        ## 拉取代码到虚拟机
         uses: actions/checkout@v5.0.0
 
-      - name: Check out wxzed/action for shared configs and actions
+      - name: Check out wxzed/cloud-code-checks for shared configs and actions
         uses: actions/checkout@v5.0.0
         with:
-          repository: wxzed/action
+          repository: wxzed/cloud-code-checks
           ref: main
           path: .action
 
@@ -89,15 +89,15 @@ jobs:
       - name: Check out code from GitHub
         uses: actions/checkout@v5.0.0           ##检查代码
 
-      - name: Check out wxzed/action for shared configs
+      - name: Check out wxzed/cloud-code-checks for shared configs
         uses: actions/checkout@v5.0.0
         with:
-          repository: wxzed/action
+          repository: wxzed/cloud-code-checks
           ref: main
           path: .action
 
       - name: Restore Python 3                ## 还原 Python 3 环境
-        uses: wxzed/action/.github/actions@main
+        uses: wxzed/cloud-code-checks/.github/actions@main
         with:
           python-version: ${{ env.PYTHON_3 }}
           cache-key: ${{ needs.common.outputs.cache-key }}
@@ -142,15 +142,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5.0.0
 
-      - name: Check out wxzed/action for shared configs
+      - name: Check out wxzed/cloud-code-checks for shared configs
         uses: actions/checkout@v5.0.0
         with:
-          repository: wxzed/action
+          repository: wxzed/cloud-code-checks
           ref: main
           path: .action
 
       - name: Restore Python 3
-        uses: wxzed/action/.github/actions@main
+        uses: wxzed/cloud-code-checks/.github/actions@main
         with:
           python-version: ${{ env.PYTHON_3 }}
           cache-key: ${{ needs.common.outputs.cache-key }}
